@@ -14,3 +14,8 @@ input {
           border-radius: 3%;
           background-color: blue;
 }
+
+input[type="submit"] {
+          margin-top: 5px;
+          background-color: greenyellow;
+}
