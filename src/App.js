@@ -1,11 +1,16 @@
 import './App.css';
-import Home from './components/Home';
-
+import Routes from './Routes';
+import Header from './components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useRoutes } from 'react-router-dom';
 
 function App() {
+
+  let Router = useRoutes(Routes)
   return (
     <div className="App">
-      <Home/>
+      <Header/>
+      {Router}      
     </div>
   );
 }
