@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import supabase from '../SupabaseClient';
+import Product from './Product';
+
 
 function Home() {
 
@@ -29,10 +31,7 @@ function Home() {
                               {fetchError && <p>{fetchError}</p>}
                               {products && <div>
                                         {products.map(product => (
-                                                  <div key={product.id}>
-                                                            <p>{product.name}</p>
-                                                            <p>{product.price}</p>
-                                                  </div>
+                                                  <Product key={product.id} {...product} />
                                         ))}
                               </div>}
                     </>
