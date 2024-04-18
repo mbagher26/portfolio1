@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './../styles/Home.css'
-import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -32,11 +31,6 @@ function Home() {
           }, [])
           return (
                     <Container fluid className='home-container'>
-                              <Row>
-                                        <Col style={{marginLeft:'35px', marginTop: '10px'}}>
-                                                  <Link to='/create'>new product</Link>
-                                        </Col>
-                              </Row>
                               <Row className='home-row'>
                                         {products &&
                                                   products.map(product => (
