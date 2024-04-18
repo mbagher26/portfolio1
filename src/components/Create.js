@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import './../styles/Create.css'
 import supabase from '../SupabaseClient';
+import { useNavigate } from 'react-router-dom';
 
 function Create() {
 
@@ -9,14 +10,18 @@ function Create() {
           const [price, setPrice] = useState('');
           const [formError, setFormError] = useState(null);
 
+          let navigate = useNavigate()
+
           useEffect(() => {
                     
           })
+          
           const submitHandler = (e) => {
                     e.preventDefault();
 
                     if (!name || !price) {
                               setFormError("Fill all the fields.")
+                              return
                     }
 
                     const fetchSupabase = async () => {
@@ -31,8 +36,10 @@ function Create() {
                                         console.log(data);
                                         setFormError(null)
                               }
+                              navigate('/home')
                     }
                     fetchSupabase()
+                    
           }
 
 
