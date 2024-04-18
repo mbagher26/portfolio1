@@ -9,10 +9,10 @@ function Header() {
   return (
     <Navbar bg="primary" data-bs-theme="dark">
       <Container fluid >
-        <Navbar.Brand href="/home">PORTFOLIO</Navbar.Brand>
+        <Navbar.Brand href="/home">Portfolio</Navbar.Brand>
         <Nav className="me-auto">
           <Link style={{color:'white'}} to="/home">Home</Link>
-          <Link style={{color:'white'}} to="/create">new product</Link>
+          <Link style={{color:'white'}} to="/create">New product</Link>
         </Nav>
       </Container>
     </Navbar>
