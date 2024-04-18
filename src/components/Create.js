@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import './../styles/Create.css'
+import './../styles/Form.css'
 import supabase from '../SupabaseClient';
 import { useNavigate } from 'react-router-dom';
 
@@ -44,8 +44,8 @@ function Create() {
 
 
           return (
-                    <div className='create-container'>
-                              <form className='create-form' onSubmit={submitHandler}>
+                    <div className='container'>
+                              <form className='form' onSubmit={submitHandler}>
                                         <h1>Create new product</h1>
                                         <label htmlFor="inputName">Name</label>
                                         <input id='inputName' placeholder='name' value={name} onChange={(e) => setName(e.target.value)} type="text" />
