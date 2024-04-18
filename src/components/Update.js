@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import supabase from '../SupabaseClient';
+import './../styles/Form.css'
 
 function Update() {
 
@@ -33,8 +34,8 @@ function Update() {
           },[])
 
           return (
-                    <div className='updata-container'>
-                              <form className='update-form' onSubmit={submitHandler}>
+                    <div className='container'>
+                              <form className='form' onSubmit={submitHandler}>
                                         <h1>Update product{id }</h1>
                                         <label htmlFor="inputName">Name</label>
                                         <input id='inputName' placeholder='name' value={name} onChange={(e) => setName(e.target.value)} type="text" />
