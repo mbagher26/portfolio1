@@ -1,7 +1,8 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import React from 'react'
 import './../styles/Product.css'
+import { Link } from 'react-router-dom';
+import { BsPen } from "react-icons/bs";
 
 const Product = (props) => {
   return (
@@ -12,7 +13,9 @@ const Product = (props) => {
         <Card.Text>
           {props.price}
         </Card.Text>
-        <Button variant="primary">buy</Button>
+        <Link to={`/update/${props.id}`}>
+         <BsPen/>updateing
+        </Link>
       </Card.Body>
     </Card>
   )
