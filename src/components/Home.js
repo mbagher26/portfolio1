@@ -2,7 +2,10 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import supabase from '../SupabaseClient';
 import Product from './Product';
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import './../styles/Home.css'
 
 function Home() {
 
@@ -27,14 +30,17 @@ function Home() {
                     fetchsupabase()
           }, [])
           return (
-                    <>
-                              {fetchError && <p>{fetchError}</p>}
-                              {products && <div>
-                                        {products.map(product => (
-                                                  <Product key={product.id} {...product} />
-                                        ))}
-                              </div>}
-                    </>
+                    <Container fluid className='home-container'>
+                              <Row className='home-row'>
+                                        {products &&
+                                                  products.map(product => (
+                                                            <Col className='home-col' sm={6} md={6} lg={4} xl={3}>
+                                                                      <Product key={product.id} {...product} />
+                                                            </Col>
+                                                  ))
+                                        }
+                              </Row>
+                    </Container>
           )
 }
 export default Home
