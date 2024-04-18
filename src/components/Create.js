@@ -36,7 +36,7 @@ function Create() {
                                         console.log(data);
                                         setFormError(null)
                               }
-                              navigate('/home')
+                              navigate('/home', {replace:true})
                     }
                     fetchSupabase()
                     
