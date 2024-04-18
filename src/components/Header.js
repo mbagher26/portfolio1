@@ -1,19 +1,19 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
+import './../styles/Header.css'
 
 function Header() {
   return (
-    <Navbar className="bg-body-tertiary">
-      <Container>
-        <Link to='/home'>PROTFOLIO</Link>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            Signed in as: <Link to='/login'></Link>
-          </Navbar.Text>
-        </Navbar.Collapse>
+    <Navbar bg="primary" data-bs-theme="dark">
+      <Container fluid >
+        <Navbar.Brand href="/home">PORTFOLIO</Navbar.Brand>
+        <Nav className="me-auto">
+          <Link style={{color:'white'}} to="/home">Home</Link>
+          <Link style={{color:'white'}} to="/create">new product</Link>
+        </Nav>
       </Container>
     </Navbar>
   )
