@@ -4,3 +4,35 @@
           justify-content: center;
           align-items: center;
 }
+
+.col {
+          display: flex;
+          gap: 30px;
+          margin: 0px 34px;
+}
+
+.col p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(213, 203, 203);
+          width: 85px;
+          height: 35px;
+          border-radius: 5px;
+}
+
+.row {
+          margin-top: 10px !important;
+
+}
+
+button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 85px;
+          height: 35px;
+          background-color: rgb(151, 223, 43);
+          border-radius: 5px !important;
+          border: none;
+}
