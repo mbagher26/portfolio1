@@ -12,6 +12,12 @@ function Home() {
           const [products, setProducts] = useState(null);
           const [fetchError, setFetchError] = useState(null);
 
+          const deleteHandler = (id) => {
+
+                    let newProducts = products.filter(product => product.id !== id)
+                    setProducts(newProducts)
+          }
+
           useEffect(() => {
                     const fetchsupabase = async () => {
                               const { data, error } = await supabase
@@ -35,7 +41,7 @@ function Home() {
                                         {products &&
                                                   products.map(product => (
                                                             <Col key={product.id} className='home-col' sm={6} md={6} lg={4} xl={3}>
-                                                                      <Product {...product} />
+                                                                      <Product {...product} onRemove={deleteHandler} />
                                                             </Col>
                                                   ))
                                         }
