@@ -11,6 +11,7 @@ function Home() {
 
           const [products, setProducts] = useState(null);
           const [fetchError, setFetchError] = useState(null);
+          const [orderBy, setOrderBy] = useState('created_at');
 
           const deleteHandler = (id) => {
 
@@ -23,6 +24,7 @@ function Home() {
                               const { data, error } = await supabase
                                         .from("products")
                                         .select()
+                                        .order(orderBy, { ascending: false })
                               if (error) {
                                         setFetchError(error)
                                         setProducts(null)
@@ -34,9 +36,17 @@ function Home() {
                     }
 
                     fetchsupabase()
-          }, [])
+          }, [orderBy])
           return (
                     <Container fluid className='home-container'>
+                              <Row className='orderby'>
+                                        <Col>
+                                                  <button onClick={() => setOrderBy('name')} >Name</button>
+                                                  <button onClick={() => setOrderBy('price')} >Price</button>
+                                                  <button onClick={() => setOrderBy('created_at')} >Create-at</button>
+                                                  <p>{orderBy}</p>
+                                        </Col>
+                              </Row>
                               <Row className='home-row'>
                                         {products &&
                                                   products.map(product => (
